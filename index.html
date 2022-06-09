@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-converter</title>
+</head>
+
+<body>
+    <h1>text-converter</h1>
+
+    <h4>Input</h4>
+
+    <textarea id="text-1" cols="30" rows="10"></textarea>
+
+    <div style="margin-top: 1rem; border-bottom: 1px solid;"></div>
+
+    <h4>Output</h4>
+
+    <h3>Safe URL</h3>
+
+    <p id="result-1"></p>
+
+    <h3>Capitalize</h3>
+
+    <p id="result-2"></p>
+
+    <script src="dist/text-converter.js"></script>
+    <script>
+        function evt(e) {
+            var str = document.getElementById("text-1").value;
+
+            document.getElementById("result-1").innerHTML = textConverter.toSafeURL(str);
+            document.getElementById("result-2").innerHTML = textConverter.capitalize(str);
+        }
+
+        document.getElementById("text-1").addEventListener("input", evt, false);
+    </script>
+</body>
+
+</html>
